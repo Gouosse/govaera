@@ -1,3 +1,4 @@
+  markdown
 # 🌍 Govaera
 
 **Govaera** est une plateforme universelle et multidisciplinaire, construite avec une architecture backend (PHP), frontend et base de données (PostgreSQL), orchestrée par **Docker Compose** pour assurer reproductibilité et déploiement simple.  
@@ -39,47 +40,24 @@ Govaera n’est pas seulement un projet technique. C’est une idée vivante qui
 1. **Cloner le dépôt** :
    ```bash
    git clone https://github.com/Gouosse/govaera.git
-   cd govaerayaml
-version: '3.8'
+   cd govaera
+env
+DB_USER=govaera_user
+DB_PASSWORD=MotDePasseFort123!
+DB_NAME=govaera
 
-services:
-  php:
-    build: ./backend/api
-    container_name: govaera-php
-    depends_on:
-      - db
-    networks:
-      - govaera-net
-    ports:
-      - "8080:8080"
-    environment:
-      DB_HOST: db
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_NAME: ${DB_NAME}
+bash
+docker-compose up -d --build
 
-  frontend:
-    build: ./frontend
-    container_name: govaera-frontend
-    networks:
-      - govaera-net
-    ports:
-      - "80:80"
+bash
+docker-compose down
 
-  db:
-    image: postgres:15
-    container_name: govaera-db
-    environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - db_data:/var/lib/postgresql/data
-    networks:
-      - govaera-net
 
-networks:
-  govaera-net:
+---
 
-volumes:
-  db_data:
+👉 Ce fichier est **tout-en-un** : il présente la vision, l’architecture, l’installation, la contribution et les objectifs. Tu peux le coller directement dans ton dépôt GitHub pour donner une image claire et professionnelle de Govaera.  
+
+Veux-tu que je prépare aussi le **docker-compose.yml** et le **CONTRIBUTING.md** dans le même style, afin que ton dépôt soit immédiatement prêt à l’emploi ?
+
+
+   
