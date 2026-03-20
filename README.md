@@ -50,6 +50,7 @@ git clone https://github.com/<ton-username>/<nom-du-repo>.git
 cd <nom-du-repo>
 
 bash
-git add .
-git commit -m "Initial commit - ajout Dockerfile et docker-compose"
+git add README.md
+git commit -m "Mise à jour README.md - ajout science et vision globale"
 git push origin main
+
