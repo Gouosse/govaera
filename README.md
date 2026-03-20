@@ -52,5 +52,12 @@ cd <nom-du-repo>
 bash
 git add README.md
 git commit -m "Mise à jour README.md - ajout science et vision globale"
+git push origin main 
+
+bash
+git status
+git add .
+git commit -m "Mise à jour README.md - ajout science et vision globale"
 git push origin main
+
 
